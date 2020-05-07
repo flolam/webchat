@@ -17,7 +17,7 @@
 <script id="message-template" type="text/html">
     <div>
         <p>
-            {{createdAt}} {{message}}
+            {{createdAt}} - {{message}}
         </p>
     </div>
 </script>
@@ -25,7 +25,7 @@
 <script id="location-message-template" type="text/html">
     <div>
         <p>
-            <a href="{{message}}" target="_blank">My current location<a>
+            {{createdAt}} - <a href="{{message}}" target="_blank">My current location</a>
         </p>
     </div>
 </script>
