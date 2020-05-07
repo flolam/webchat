@@ -22,15 +22,15 @@ io.on('connection', (socket) => {
     const filter = new Filter()
 
     if (filter.isProfane(message)) {
-      return callback('profanity isnt allowed')
+      return callback('profanity is not allowed')
     }
     io.emit('message', message)
     callback()
   })
   socket.on('sendLocation', (position, callback) => {
 
-    io.emit('message', `<a target="_blank" href="https://google.com/maps/?q=${position.lat},${position.lon}">my position</a>`)
-    callback('')
+    io.emit('locationMessage', `https://google.com/maps/?q=${position.lat},${position.lon}`)
+    callback()
   })
 
   socket.on('disconnect', () => {
