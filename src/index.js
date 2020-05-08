@@ -25,24 +25,26 @@ io.on('connection', (socket) => {
     }
 
     socket.join(user.room)
-    socket.emit('message', generateMessage('welcome!'))
-    socket.broadcast.to(user.room).emit('message', generateMessage(`${user.username} has joined !`))
+    socket.emit('message', generateMessage('Server', 'welcome!'))
+    socket.broadcast.to(user.room).emit('message', generateMessage('Server', `${user.username} has joined !`))
 
     callback()
   })
 
   socket.on('sendMessage', (message, callback) => {
+    const user = getUser(socket.id)
     const filter = new Filter()
 
     if (filter.isProfane(message)) {
       return callback('profanity is not allowed')
     }
-    io.to('1').emit('message', generateMessage(message))
+    io.to(user.room).emit('message', generateMessage(user.username, message))
     callback()
   })
   socket.on('sendLocation', (position, callback) => {
+    const user = getUser(socket.id)
 
-    io.emit('locationMessage', generateLocationMessage(`https://google.com/maps/?q=${position.lat},${position.lon}`))
+    io.to(user.room).emit('locationMessage', generateLocationMessage(user.username, `https://google.com/maps/?q=${position.lat},${position.lon}`))
     callback()
   })
 
@@ -50,7 +52,7 @@ io.on('connection', (socket) => {
     const user = removeUser(socket.id)
 
     if (user) {
-      io.to(user.room).emit('message', generateMessage(`${user.username} has left`))
+      io.to(user.room).emit('message', generateMessage('Server', `${user.username} has left`))
     }
   })
 })
