@@ -1,31 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="font-lato" lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title>Chat App</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="./css/style.css"/>
 </head>
-<body>
-
-    <form action="/chat.html">
-
-        <div class="form-group"><input class="form-control" type="text" name="username" placeholder="username" /></div>
-        <div class="form-group"><input class="form-control" type="text" name="room" placeholder="room" /></div>
-        <div class="form-group">
-            <button class="btn btn-primary btn-block" type="submit">Log In</button>
+<body style="background-image:url(&quot data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%234299e1' fill-opacity='1'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E &quot) ">
+<div
+        class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+>
+    <div class="max-w-md w-full bg-white p-12 border    x border-blue-500 rounded-lg">
+        <div>
+            <h1 class="mt-6 font-cabin text-center text-3xl leading-9 font-extrabold text-blue-800">
+                Chat app
+            </h1>
         </div>
-    </form>
+        <form class="mt-8" action="chat.html" method="GET">
+            <div class="rounded-md shadow-sm">
+                <div>
+                    <input
+                            name="username"
+                            type="text"
+                            required
+                            class="font-lato appearance-none rounded-none relative block w-full px-3 py-2 border border-blue-500 placeholder-gray-500 text-blue-800 rounded-t-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                            placeholder="Username"
+                    />
+                </div>
+                <div class="-mt-px">
+                    <input
+                            name="room"
+                            type="text"
+                            required
+                            class="font-lato appearance-none rounded-none relative block w-full px-3 py-2 border border-blue-500 placeholder-gray-500 text-blue-800 rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+                            placeholder="Room"
+                    />
+                </div>
+            </div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+            <div class="mt-6">
+                <button
+                        type="submit"
+                        class="group font-cabin relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-gray-100  bg-blue-500 hover:bg-blue-300 focus:outline-none focus:border-blue-700 focus:shadow-outline-blue active:bg-blue-700 transition duration-150 ease-in-out">
+                    Log in
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 </html>
